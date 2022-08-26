@@ -15,6 +15,9 @@ Typography
 h1 {
   font-family: "Karla", sans-serif;
   color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  grid-row: 2;
 }
 
 .title-span {
@@ -23,36 +26,56 @@ h1 {
 
 .title-paragraph {
   color: #d5d4d8;
-  margin-bottom: 1em;
+  font-size: 1.25rem;
+  grid-row: 3;
 }
 
 /* === buttons === */
 
 button {
   border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-#password-generator {
+.password-btn {
   background: #10b981;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border: none;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
   padding: 0.6em 1em;
+  grid-row: 4;
+  grid-column: 2;
+  max-width: 200px;
+  max-height: 50px;
 }
 
-#password-el-1,
-#password-el-2 {
+.password {
   background: #273549;
-  width: 200px;
-  height: 30px;
   margin-bottom: 0.75em;
-  color: white;
-  border: none;
+  color: #fff;
+  /* border: none; */
 }
 
-#password-generator:hover {
+#password-el-1 {
+  margin-right: 0.5em;
+}
+
+#password-el-2 {
+  margin-left: 0.5em;
+}
+
+.password-btn:hover {
   background: #fff;
   color: #10b981;
+}
+
+/* === grid typography === */
+
+h1,
+.title-paragraph,
+.passwords-wrapper {
+  grid-column: 2 / -2;
 }
 
 /* =============
@@ -60,7 +83,20 @@ Layout
 ============ */
 
 .container {
-  max-width: 600px;
+  max-width: 550px;
   margin: 0 auto;
   background: #1f2937;
+  grid-template: 2em repeat(4, 1fr) 2em / 1.2em repeat(2, 1fr) 1.2em;
+}
+
+.container,
+.passwords-wrapper {
+  display: grid;
+}
+
+.passwords-wrapper {
+  border-top: 1px solid #2f3e53;
+  padding-top: 2em;
+  grid-row: 5;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 }
